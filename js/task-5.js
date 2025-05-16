@@ -12,3 +12,5 @@ btn.addEventListener("click", () => {
   document.body.style.backgroundColor = rndColor;
   bgChange.textContent = `${rndColor}`;
 })
+
+//знову не так?
