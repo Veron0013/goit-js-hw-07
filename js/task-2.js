@@ -27,7 +27,9 @@ const images = [
 
 const elGallery = document.querySelector("ul.gallery");
 
-console.log(elGallery);
+//console.log(elGallery);
+
+let tagTxt = "";
 
 for (const element of images) {
 
@@ -35,18 +37,10 @@ for (const element of images) {
     continue;
   }
 
-  const newLi = document.createElement("li");
-  const newImage = document.createElement("img");
-
-  newLi.classList.add("taskList")
-
-  newImage.setAttribute("src", element.url);
-  newImage.setAttribute("alt", element.alt);
-  newImage.width = "450";
-
-  newImage.classList.add("listItemImage")
-
-  newLi.append(newImage);
-  elGallery.append(newLi);
-
+  tagTxt += `<li class="taskList">
+    <img src="${element.url}" alt="${element.alt}" class="listItemImage" width="450">
+    </img>
+  </li>`;
 }
+
+elGallery.insertAdjacentHTML("afterbegin", tagTxt);
